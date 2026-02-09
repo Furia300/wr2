@@ -172,15 +172,15 @@ export function HeroParticles() {
       }
     };
 
-    canvas.addEventListener("mousemove", onMove);
-    canvas.addEventListener("click", onClick);
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("click", onClick);
     animate();
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", resize);
-      canvas.removeEventListener("mousemove", onMove);
-      canvas.removeEventListener("click", onClick);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("click", onClick);
     };
   }, []);
 
