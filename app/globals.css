@@ -24,6 +24,12 @@
 
 html {
   scroll-behavior: smooth;
+  /* Esconder barra de rolagem nativa (evita barra cinza no mobile) */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -32,6 +38,9 @@ body {
   background-color: #000000;
   color: #ffffff;
   overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Scroll alvo: compensar header fixo (72px + 16px) */

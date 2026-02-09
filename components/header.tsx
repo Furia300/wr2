@@ -118,9 +118,9 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle — mesmo espaçamento da logo (padding-right = padding-left da logo) */}
         <button
-          className="md:hidden p-2 text-white/80 hover:text-white transition-colors"
+          className="md:hidden p-2 pr-5 text-white/80 hover:text-white transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Abrir menu"
         >
