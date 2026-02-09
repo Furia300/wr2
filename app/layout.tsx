@@ -12,9 +12,10 @@ export const metadata: Metadata = {
   description:
     "A WR2 Serviços une tecnologia avançada e inovação para proteger o seu negócio.",
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: [{ url: "/images/logo.png", type: "image/png", sizes: "any" }],
+    apple: [{ url: "/images/logo.png", sizes: "180x180", type: "image/png" }],
   },
+  appleWebApp: { capable: true, title: "WR2 Serviços" },
 };
 
 export default function RootLayout({

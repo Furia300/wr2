@@ -6,11 +6,12 @@ export async function middleware(request: NextRequest) {
     request: { headers: request.headers },
   });
 
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-    return response;
-  }
+  try {
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      return response;
+    }
 
-  const supabase = createServerClient(
+    const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -37,10 +38,14 @@ export async function middleware(request: NextRequest) {
   const isApi = pathname.startsWith("/api/");
 
   // Redirecionar para login se nao autenticado em rota protegida
-  if (!isPublicWr2 && !isApi && pathname.startsWith("/wr2/") && !user) {
-    const loginUrl = request.nextUrl.clone();
-    loginUrl.pathname = "/wr2/login";
-    return NextResponse.redirect(loginUrl);
+    if (!isPublicWr2 && !isApi && pathname.startsWith("/wr2/") && !user) {
+      const loginUrl = request.nextUrl.clone();
+      loginUrl.pathname = "/wr2/login";
+      return NextResponse.redirect(loginUrl);
+    }
+  } catch {
+    // Se der qualquer erro (cookies, Supabase, etc.), deixa a página carregar
+    return response;
   }
 
   return response;
