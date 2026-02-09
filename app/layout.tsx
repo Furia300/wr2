@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "WR2 Serviços - Soluções Inteligentes em Segurança e Facilities",
   description:
     "A WR2 Serviços une tecnologia avançada e inovação para proteger o seu negócio.",
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
