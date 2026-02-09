@@ -4,12 +4,11 @@ import { cookies } from "next/headers";
 export async function createClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) {
-    throw new Error("Configure NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY no .env.local");
-  }
   const cookieStore = await cookies();
+  const resolvedUrl = url || "https://placeholder.supabase.co";
+  const resolvedKey = key || "placeholder-key";
 
-  return createServerClient(url, key,
+  return createServerClient(resolvedUrl, resolvedKey,
     {
       cookies: {
         getAll() {
