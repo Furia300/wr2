@@ -172,6 +172,12 @@ header .header-login-btn:active {
 .hero h1 .cursor {
   animation: blink 0.8s ease-in-out infinite;
   font-weight: 400;
+  color: #ffd700;
+  display: inline;
+  margin-left: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 @keyframes blink {
@@ -1850,7 +1856,10 @@ header.header-light nav.md\:hidden a {
 
 @media (max-width: 767px) {
   .hero {
-    padding: 1.5rem 1rem;
+    padding-top: calc(5rem + 20px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
     height: auto;
     min-height: 100vh;
     display: flex;
@@ -1906,6 +1915,9 @@ header.header-light nav.md\:hidden a {
     text-align: center;
     font-size: 1.25rem;
     display: block;
+  }
+  .hero h1 .cursor {
+    color: #ffd700;
   }
   .hero-cta-wrap {
     width: 100%;
@@ -1963,7 +1975,10 @@ header.header-light nav.md\:hidden a {
 
 @media (max-width: 479px) {
   .hero {
-    padding: 1rem 0.75rem;
+    padding-top: calc(5rem + 20px);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 1rem;
     min-height: 100vh;
     overflow-x: hidden;
   }
