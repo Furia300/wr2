@@ -1,0 +1,9 @@
+# Netlify – WR2 Serviços (Next.js)
+# https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/
+# O Netlify detecta Next.js e usa o adapter OpenNext automaticamente.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"

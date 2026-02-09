@@ -1,0 +1,16 @@
+# Dependências e build
+node_modules/
+.next/
+out/
+
+# Variáveis de ambiente — NUNCA commitar chaves
+.env
+.env.local
+.env.*.local
+
+# Credenciais temporárias
+SUPER_ADMIN_CREDENCIAIS.txt
+
+# IDE / OS
+.DS_Store
+*.log
